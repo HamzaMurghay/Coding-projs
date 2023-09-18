@@ -22,7 +22,7 @@ public class GuessingGame {
 
         while (choice == 6) { 
             System.out.println("---------------------Difficulty Mode---------------------");
-            System.out.println("1) Little Bitch Mode [0-10]  (It's called that because if you choose this, you're a little bitch! ;)");
+            System.out.println("1) Little Bitch Mode [0-10]  {It's called that because if you choose this, you're a little bitch! ;) }");
             System.out.println("2) Mere Mortal Mode [0-100]");
             System.out.println("3) Chad Mode [0-1000]");
             System.out.println("4) Giga Chad Mode [0-10,000]");
