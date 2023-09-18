@@ -14,7 +14,7 @@ public class GuessingGame {
         String choice = "6";
         
         System.out.print("Hey buddy! How you doin'? ");
-        sc.next();
+        sc.nextLine();
         System.out.println("I dont care! :), lets play a game!");
         System.out.println("So I'm gonna think of a number, it's your job to guess that number");
         System.out.println("Of course, you have multiple tries, and you're not on your own! I will give you tips based on how close you are to the 'Secret Number' ");
@@ -28,7 +28,7 @@ public class GuessingGame {
             System.out.println("3) Chad Mode [0-1000]");
             System.out.println("4) Giga Chad Mode [0-10,000]");
             System.out.println("5) Sigma Mode [0-100,000]");
-            choice = sc.next();
+            choice = sc.nextLine();
 
             switch (choice) {
                 case "1":
@@ -48,12 +48,13 @@ public class GuessingGame {
                     break;
                 default:
                     choice = "6";
-                    System.out.println("Invalid choice! Please enter a valid choice. Try again");
+                    System.out.println();
+                    System.out.println("Invalid choice! Please enter a valid choice.Try again");
                     break;
             }
         }
 
-        System.out.println("Ok so here goes, the game has begun! start your gueessing!");
+        System.out.println("Ok so here goes, the game has begun! Start your gueessing!");
         // System.out.println(secretNumber);
 
         GuessingGame m = new GuessingGame(); //imp, this is how we solved the main prob
@@ -62,13 +63,22 @@ public class GuessingGame {
     }
 
     public void CheckGuess(int secNum) { //imp, this is how we solved the main prob NOTICE HOW THERES NO STATIC?
-            
-        while (guess != secNum) {
-            System.out.print("Enter Your Guess! ");
-            guess = sc.nextInt();
 
+        while (guess != secNum) {
+            boolean guessIsInt = false;
+            do {
+                System.out.print("Enter Your Guess: ");
+                String intCheck = sc.nextLine();
+                try {
+                    guess = Integer.parseInt(intCheck);
+                    guessIsInt = true;
+                } catch(NumberFormatException nfe) {
+                    System.out.println("Oops! Invalid input, Try Again!");
+                }
+            } while (guessIsInt == false);
+            
             if (!guesses.contains(guess)) {
-                guesses.add(guess);  //Unfortunately I still need to resolve one error related to this inthe program, i need to be able to handle inputs that aren't integers, unfortunately i dont know how to do it :( everything I tried wasnt working
+                guesses.add(guess);
                 tries++;
             }
             
