@@ -54,7 +54,7 @@ public class GuessingGame {
             }
         }
 
-        System.out.println("Ok so here goes, the game has begun! Start your gueessing!");
+        System.out.println("Ok so here goes, the game has begun! Start your guessing!");
         // System.out.println(secretNumber);
 
         GuessingGame m = new GuessingGame(); //imp, this is how we solved the main prob
