@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Random;
 
-public class Main {
+public class GuessingGame {
     int guess = -1, tries = 0;
     ArrayList guesses = new ArrayList<>();
     static Scanner sc = new Scanner(System.in); //imp, this is how we solved the main prob, NOTOCE HOW THERE IS STATIC
@@ -55,7 +55,7 @@ public class Main {
         System.out.println("Ok so here goes, the game has begun! start your gueessing!");
         // System.out.println(secretNumber);
 
-        Main m = new Main(); //imp, this is how we solved the main prob
+        GuessingGame m = new GuessingGame(); //imp, this is how we solved the main prob
         m.CheckGuess(secretNumber); //imp, this is how we solved the main prob
         sc.close();
     }
