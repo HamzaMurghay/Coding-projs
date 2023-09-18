@@ -10,7 +10,8 @@ public class GuessingGame {
     public static void main(String args[]) {
 
         Random random = new Random();
-        int choice = 6, secretNumber = 1;
+        int secretNumber = 1;
+        String choice = "6";
         
         System.out.print("Hey buddy! How you doin'? ");
         sc.next();
@@ -20,33 +21,33 @@ public class GuessingGame {
         System.out.println("Before you start you need to choose the difficulty mode that you are going to play on, that is the range from which the 'Secret Number will be chosen!':");
         System.out.println();
 
-        while (choice == 6) { 
+        while (choice.equals("6")) { 
             System.out.println("---------------------Difficulty Mode---------------------");
-            System.out.println("1) Little Bitch Mode [0-10]  (It's called that because if you choose this, you're a little bitch! ;)");
+            System.out.println("1) Little Bitch Mode [0-10]  {It's called that because if you choose this, you're a little bitch! ;) }");
             System.out.println("2) Mere Mortal Mode [0-100]");
             System.out.println("3) Chad Mode [0-1000]");
             System.out.println("4) Giga Chad Mode [0-10,000]");
             System.out.println("5) Sigma Mode [0-100,000]");
-            choice = sc.nextInt();
+            choice = sc.next();
 
             switch (choice) {
-                case 1:
+                case "1":
                     secretNumber = random.nextInt(11);
                     break;
-                case 2:
+                case "2":
                     secretNumber = random.nextInt(101);
                     break;
-                case 3:
+                case "3":
                     secretNumber = random.nextInt(1001);
                     break;
-                case 4:
+                case "4":
                     secretNumber = random.nextInt(10001);
                     break;
-                case 5:
+                case "5":
                     secretNumber = random.nextInt(100001);
                     break;
                 default:
-                    choice = 6;
+                    choice = "6";
                     System.out.println("Invalid choice! Please enter a valid choice. Try again");
                     break;
             }
@@ -67,7 +68,7 @@ public class GuessingGame {
             guess = sc.nextInt();
 
             if (!guesses.contains(guess)) {
-                guesses.add(guess);
+                guesses.add(guess);  //Unfortunately I still need to resolve one error related to this inthe program, i need to be able to handle inputs that aren't integers, unfortunately i dont know how to do it :( everything I tried wasnt working
                 tries++;
             }
             
