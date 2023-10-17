@@ -5,7 +5,7 @@ import java.util.Random;
 public class GuessingGame {
     int guess = -1, tries = 0;
     ArrayList guesses = new ArrayList<>();
-    static Scanner sc = new Scanner(System.in); //imp, this is how we solved the main prob, NOTOCE HOW THERE IS STATIC
+    static Scanner sc = new Scanner(System.in);
 
     public static void main(String args[]) {
 
@@ -57,12 +57,12 @@ public class GuessingGame {
         System.out.println("Ok so here goes, the game has begun! Start your guessing!");
         // System.out.println(secretNumber);
 
-        GuessingGame m = new GuessingGame(); //imp, this is how we solved the main prob
-        m.CheckGuess(secretNumber); //imp, this is how we solved the main prob
+        GuessingGame m = new GuessingGame();
+        m.CheckGuess(secretNumber); 
         sc.close();
     }
 
-    public void CheckGuess(int secNum) { //imp, this is how we solved the main prob NOTICE HOW THERES NO STATIC?
+    public void CheckGuess(int secNum) { 
 
         while (guess != secNum) {
             boolean guessIsInt = false;
